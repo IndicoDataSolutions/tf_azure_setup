@@ -15,6 +15,7 @@ chmod 700 $HOME/.ssh/machine_name.pem
 ssh -i $HOME/.ssh/machine_name.pem indico@${ip_address}
 sudo bash
 
+
 # execute the setup script
 run all the commands in setup.sh
 

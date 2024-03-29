@@ -18,5 +18,5 @@ sudo chmod 666 /var/run/docker.sock
 sudo systemctl restart docker.service
 sudo chmod 666 /var/run/docker.sock
 
-touch $HOME/.indico
+touch /home/indico/.indico
 
