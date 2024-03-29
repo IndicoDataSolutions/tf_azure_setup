@@ -61,7 +61,7 @@ resource "tls_private_key" "pk" {
 
 
 module "cluster-manager" {
-  depends_on = [azurerm_resource_group.cod-network, data.azurerm_resource_group.loaded-group]
+  depends_on = [module.networking, azurerm_resource_group.cod-network, data.azurerm_resource_group.loaded-group]
   source     = "app.terraform.io/indico/indico-azure-cluster-manager/mod"
   version    = "3.0.3"
 
