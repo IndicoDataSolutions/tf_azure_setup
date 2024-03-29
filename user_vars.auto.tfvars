@@ -9,5 +9,5 @@ label               = "breadnetwork"
 region              = "eastus"
 network_type        = "create"
 
-virtual_network_name        = "breadwt-vnet"
-virtual_subnet_name         = "breadwt-subnet"
+virtual_network_name  = "breadwt-vnet"
+virtual_subnet_name   = "breadwt-subnet"
