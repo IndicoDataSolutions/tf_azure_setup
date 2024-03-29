@@ -44,9 +44,8 @@ az account set --subscription $ARM_SUBSCRIPTION_ID
 
 # Git clone the source
 git clone https://github.com/IndicoDataSolutions/tf_cod.git
-
-git checkout 6.7-customer-hotfix-1
 cd tf_cod
+git checkout 6.7-customer-hotfix-1
 cd=$(pwd)
 docker run \
   --cap-add=CAP_IPC_LOCK \
