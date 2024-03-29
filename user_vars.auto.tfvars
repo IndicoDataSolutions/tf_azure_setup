@@ -4,7 +4,6 @@
 # external_ip = "xxx.yyy.zzz.qqq"
 
 resource_group_name = "bread-pre-existing"
-create_resource_group = false
 
 label               = "breadnetwork"
 region              = "eastus"

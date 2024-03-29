@@ -18,12 +18,12 @@ locals {
 }
 
 data "azurerm_resource_group" "loaded-group" {
-  count = var.create_resource_group ? 0 : 1
+  count = var.network_type == "create" ? 0 : 1
   name  = var.resource_group_name
 }
 
 resource "azurerm_resource_group" "cod-network" {
-  count    = var.create_resource_group ? 1 : 0
+  count    = var.network_type == "load" ? 0 : 1
   name     = var.resource_group_name
   location = var.region
 }

@@ -58,10 +58,4 @@ variable "virtual_subnet_name" {
   type    = string
 }
 
-variable "create_resource_group" {
-  type    = bool
-  default = true
-}
-
-
 
