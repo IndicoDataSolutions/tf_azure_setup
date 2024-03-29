@@ -20,10 +20,3 @@ sudo chmod 666 /var/run/docker.sock
 
 touch $HOME/.indico
 
-sudo chmod 777 -R /home/indico
-sudo chmod 700 /home/indico/.ssh
-sudo chmod 600 /home/indico/.ssh/*
-sudo chmod 666 /var/run/docker.sock
-sudo chmod 777 -R /home/indico/.docker
-
-

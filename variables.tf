@@ -38,4 +38,30 @@ variable "cluster_manager_vm_size" {
 }
 
 
+variable "network_type" {
+  type    = string
+  default = "create"
+
+  validation {
+    condition     = var.network_type == "create" || var.network_type == "load"
+    error_message = "${var.network_type} not valid. Type must be either create or load"
+  }
+}
+
+variable "virtual_network_name" {
+  default = null
+  type    = string
+}
+
+variable "virtual_subnet_name" {
+  default = null
+  type    = string
+}
+
+variable "create_resource_group" {
+  type    = bool
+  default = true
+}
+
+
 

@@ -13,24 +13,36 @@ provider "azurerm" {
 
 provider "http" {}
 
+locals {
+  resource_group_name = coalesce(var.resource_group_name, "${var.label}-${var.region}")
+}
+
+data "azurerm_resource_group" "loaded-group" {
+  count = var.create_resource_group ? 0 : 1
+  name  = var.resource_group_name
+}
 
 resource "azurerm_resource_group" "cod-network" {
+  count    = var.create_resource_group ? 1 : 0
   name     = var.resource_group_name
   location = var.region
 }
 
 
 module "networking" {
-  depends_on          = [azurerm_resource_group.cod-network]
-  source              = "app.terraform.io/indico/indico-azure-network/mod"
-  version             = "4.0.1"
-  network_type        = "create"
-  label               = var.label
-  vnet_cidr           = var.vnet_cidr
-  subnet_cidrs        = var.subnet_cidrs
-  resource_group_name = var.resource_group_name
-  region              = var.region
-  allow_public        = var.allow_public
+  depends_on           = [azurerm_resource_group.cod-network, data.azurerm_resource_group.loaded-group]
+  source               = "app.terraform.io/indico/indico-azure-network/mod"
+  version              = "4.0.1"
+  network_type         = "create"
+  label                = var.label
+  vnet_cidr            = var.vnet_cidr
+  subnet_cidrs         = var.subnet_cidrs
+  resource_group_name  = local.resource_group_name
+  region               = var.region
+  allow_public         = var.allow_public
+  virtual_network_name = var.virtual_network_name
+  virtual_subnet_name  = var.virtual_subnet_name
+
 }
 
 
