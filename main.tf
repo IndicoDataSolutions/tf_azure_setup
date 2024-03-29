@@ -28,12 +28,11 @@ resource "azurerm_resource_group" "cod-network" {
   location = var.region
 }
 
-
 module "networking" {
   depends_on           = [azurerm_resource_group.cod-network, data.azurerm_resource_group.loaded-group]
   source               = "app.terraform.io/indico/indico-azure-network/mod"
   version              = "4.0.1"
-  network_type         = "create"
+  network_type         = var.network_type
   label                = var.label
   vnet_cidr            = var.vnet_cidr
   subnet_cidrs         = var.subnet_cidrs
@@ -42,7 +41,6 @@ module "networking" {
   allow_public         = var.allow_public
   virtual_network_name = var.virtual_network_name
   virtual_subnet_name  = var.virtual_subnet_name
-
 }
 
 
