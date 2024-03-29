@@ -5,8 +5,8 @@
 
 resource_group_name = "bread-pre-existing"
 
-label               = "breadnetwork"
-region              = "eastus"
+label               = "breadnetwork" # prefix name on resources
+region              = "eastus"     
 network_type        = "create"
 
 virtual_network_name  = "breadwt-vnet"
