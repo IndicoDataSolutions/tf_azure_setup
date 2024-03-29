@@ -16,7 +16,7 @@ ssh -i $HOME/.ssh/machine_name.pem indico@${ip_address}
 sudo bash
 
 # execute the setup script
-source setup.sh
+run all the commands in setup.sh
 
 # setup variables
 vi /home/indico/.indico
