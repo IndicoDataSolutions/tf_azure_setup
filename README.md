@@ -13,8 +13,9 @@ Paste into $HOME/.ssh/machine_name.pem
 chmod 700 $HOME/.ssh/machine_name.pem
 
 ssh -i $HOME/.ssh/machine_name.pem indico@${ip_address}
-sudo bash
 
+# start shell as root
+sudo bash
 
 # execute the setup script
 run all the commands in setup.sh
