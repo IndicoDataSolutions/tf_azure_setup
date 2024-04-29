@@ -6,8 +6,8 @@ external_ip = "xxx.yyy.zzz.qqq"
 # Connecting
 
 ip_address=$(terraform output cluster_manager_ip)
-terraform output private_key
-get the text between << EOT >>
+
+terraform output private_key (get the text between << EOT >>)
 
 Paste into $HOME/.ssh/machine_name.pem
 chmod 700 $HOME/.ssh/machine_name.pem
