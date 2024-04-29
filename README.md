@@ -5,6 +5,7 @@ external_ip = "xxx.yyy.zzz.qqq"
 
 # Connecting
 
+```shell
 ip_address=$(terraform output cluster_manager_ip)
 
 terraform output private_key (get the text between << EOT >>)
@@ -16,6 +17,7 @@ ssh -i $HOME/.ssh/machine_name.pem indico@${ip_address}
 
 # start shell as root
 sudo bash
+```
 
 # execute the setup script
 run all the commands in setup.sh
@@ -23,7 +25,6 @@ run all the commands in setup.sh
 # setup variables
 vi /home/indico/.indico
 
-```
 export ARM_CLIENT_ID=xxx
 export ARM_SUBSCRIPTION_ID=xxx
 export ARM_TENANT_ID=xxx
